@@ -49,7 +49,7 @@ class FluttinatorNavigatorState extends NavigatorState {
   @override
   void initState() {
     super.initState();
-    this.parentNavigator = FluttinatorNavigator.of(context);
+    this.parentNavigator = FluttinatorNavigator.of(context, nullOk: true);
   }
 
   @override
