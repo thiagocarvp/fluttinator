@@ -14,11 +14,11 @@ class FluttinatorSettings {
   );
 }
 
-class Fluttinator extends StatefulWidget {
+abstract class Fluttinator extends StatefulWidget {
   final FluttinatorSettings settings;
   GlobalKey<FluttinatorNavigatorState> get navigatorKey => null;
-  Map<String, WidgetBuilder> get screenRoutes => {};
-  Map<String, NavigatorBuilder> get navigatorRoutes => {};
+  Map<String, WidgetBuilder> get screenRoutes;
+  Map<String, NavigatorBuilder> get navigatorRoutes;
   String get initialRoute => settings?.initialRoute ?? '/';
 
   Fluttinator({
@@ -28,8 +28,8 @@ class Fluttinator extends StatefulWidget {
   @override
   FluttinatorState createState() => FluttinatorState();
 
-  static NavigatorBuilder get builder => (FluttinatorSettings settings) =>
-      (BuildContext context) => Fluttinator(settings: settings);
+  // static NavigatorBuilder get builder => (FluttinatorSettings settings) =>
+  //     (BuildContext context) => Fluttinator(settings: settings);
 }
 
 class FluttinatorState extends State<Fluttinator> {
